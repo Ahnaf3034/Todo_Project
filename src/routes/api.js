@@ -31,7 +31,7 @@ router.put("/Update-todo",AuthVerifyMiddleware,TodoListController.UpdateTodo); /
 router.put("/Update-todo-Status",AuthVerifyMiddleware,TodoListController.UpdateStatusTodo); //Authentication complete and Update ToDo
 router.delete("/delete-todo",AuthVerifyMiddleware,TodoListController.RemoveTodo); //Remove todo
 router.get("/Select-todo-By-Status",AuthVerifyMiddleware,TodoListController.SelectTodoStatus); //Select Todo By Status
-router.get("/Select-todo-By-Date",AuthVerifyMiddleware,TodoListController.SelectTodo); 
+router.get("/Select-todo-By-Date",AuthVerifyMiddleware,TodoListController.SelectTodoDate); //Select Todo By Date
 
 
 //Export Router 

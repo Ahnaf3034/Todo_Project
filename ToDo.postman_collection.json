@@ -1,0 +1,350 @@
+{
+	"info": {
+		"_postman_id": "c793a650-30e6-47d4-b7da-c01a0de212ca",
+		"name": "ToDo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24391901"
+	},
+	"item": [
+		{
+			"name": "Login Registration",
+			"item": [
+				{
+					"name": "Create Profile",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"FirstName\":\"Ahnaf\",\r\n    \"LastName\":\"Rashid\",\r\n    \"ContactNo\":\"01799420505\",\r\n    \"Age\":\"25\",\r\n    \"Email\":\"a@gmail.com\",\r\n    \"UserName\":\"Ahnaf505\",\r\n    \"Password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/create-profile",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"create-profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Log in",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"UserName\":\"Munim505\",\r\n    \"Password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/Log-in",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"Log-in"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Profile",
+			"item": [
+				{
+					"name": "Select Profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token-key",
+								"value": "{{Token}}",
+								"description": "This is Token key",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"UserName\":\"Ahnaf505\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/Select-profile",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"Select-profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Profile",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token-key",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n            \"_id\": \"63c286b2f0a00916d3bae853\",\r\n            \"FirstName\": \"Muhaimin Rashid\",\r\n            \"LastName\": \"Munim\",\r\n            \"ContactNo\":\"01681911190\",\r\n            \"Age\": 16,\r\n            \"Email\": \"m@gmail.com\",\r\n            \"UserName\": \"Munim505\",\r\n            \"Password\": \"45678\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/Update-profile",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"Update-profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Todo List",
+			"item": [
+				{
+					"name": "Create Todo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/Create-todo",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"Create-todo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Select Todo",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token-key",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BaseURL}}/Select-Todo",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"Select-Todo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Todo",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token-key",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " \"TodoSubject\":\"New bazar-Sodai\",\r\n\"TodoDescription\":\"Ajker Sodai\"",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/Update-Todo",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"Update-Todo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Todo Status",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token-key",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"TodoStatus\":\"Completed\",\r\n\"_id\":\"63c2d85de5c1f20a2a3706e3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/Update-Todo-Status",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"Update-Todo-Status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Todo",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token-key",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BaseURL}}/delete-Todo",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"delete-Todo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter By status",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token-key",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BaseURL}}/Select-Todo-By-Status",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"Select-Todo-By-Status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter By Date",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token-key",
+								"value": "{{Token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BaseURL}}/Select-Todo-By-Date",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"Select-Todo-By-Date"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BaseURL",
+			"value": "http://localhost:8080/api/v1",
+			"type": "string"
+		},
+		{
+			"key": "Token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzM3OTMyNDQsImRhdGEiOnsiX2lkIjoiNjNjMjg2YjJmMGEwMDkxNmQzYmFlODUzIiwiRmlyc3ROYW1lIjoiTXVoYWltaW4iLCJMYXN0TmFtZSI6IlJhc2hpZCIsIkNvbnRhY3RObyI6MTY4MTkxMTE5MCwiQWdlIjoyNSwiRW1haWwiOiJtQGdtYWlsLmNvbSIsIlVzZXJOYW1lIjoiTXVuaW01MDUiLCJQYXNzd29yZCI6IjEyMzQ1NiJ9LCJpYXQiOjE2NzM3MDY4NDR9.hZeR_uZSnrAXebrrr9dz3J3UdJ7lARVvE8xBfe-VaPw",
+			"type": "string"
+		}
+	]
+}
